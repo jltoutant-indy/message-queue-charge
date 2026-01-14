@@ -1,0 +1,25 @@
+{
+  "name": "task-service",
+  "type": "module",
+  "engines": {
+    "node": "24.10.0",
+    "pnpm": "10.20.0"
+  },
+  "scripts": {
+    "addJobs": "node --loader ts-node/esm src/addJobs.ts",
+    "dev:worker": "node --loader ts-node/esm src/worker.ts",
+    "dev:producer": "node --loader ts-node/esm src/producer.ts",
+    "build": "tsc",
+    "start:worker": "node dist/worker.js",
+    "start:producer": "node dist/producer.js"
+  },
+  "dependencies": {
+    "bullmq": "^5.0.0",
+    "ioredis": "^5.3.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "ts-node": "^10.9.2",
+    "@types/node": "^24.10.0"
+  }
+}
